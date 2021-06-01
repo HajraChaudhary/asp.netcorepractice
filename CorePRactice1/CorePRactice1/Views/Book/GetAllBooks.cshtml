@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CorePRactice1.Models.bookModel>
+
+@{
+    ViewData["Title"] = "GetAllBooks";
+}
+<div class="container">
+    <h1>All books</h1>
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg">thumbnail</svg>
+                    <div class="card-body">
+                        <h3 class="card-title">@book.Name</h3>
+                        <p class="card-text"> @book.Description This section will be used to display th short description of books</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="@Url.Action("GetBooksById","Book",new {id=book.id })" class="btn btn-sm btn-dark">View Details</a>
+                            </div>
+                            <small class="text-muted">@book.Author </small>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        }
+
+
+
+    </div>
+    </div>
